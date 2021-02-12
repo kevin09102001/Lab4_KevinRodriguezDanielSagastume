@@ -160,6 +160,12 @@ public class Lab4_KevinRodriguezDanielSagastume {
                         }//Fin del switch modificar jugares o equipo
                     }
                     break;//break modificar
+                case 3:{
+                    
+                }
+                case 4:{
+                    
+                }
             }//Fin del switch PRINCIPAL
         }//Fin del while PRINCIPAL
     }//Fin del MAIN
