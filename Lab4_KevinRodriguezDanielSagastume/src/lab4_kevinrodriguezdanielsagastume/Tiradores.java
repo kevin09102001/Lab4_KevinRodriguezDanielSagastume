@@ -9,6 +9,6 @@ package lab4_kevinrodriguezdanielsagastume;
  *
  * @author Kevin
  */
-public class Tiradores extends equipos{
+public class Tiradores extends Jugadores{
     
 }

@@ -5,6 +5,7 @@
  */
 package lab4_kevinrodriguezdanielsagastume;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Date;
  */
 public class equipos {
     protected String Nombre,estadio,pais,Nombre_de_Entrenador, Nombre_de_Dueño, Nombre_de_Mascota,Fecha_de_creacion,Color_principal;
+    ArrayList<Jugadores> jugador=new ArrayList();
 
     public equipos() {
     }
@@ -28,7 +30,6 @@ public class equipos {
         this.Color_principal = Color_principal;
     }
 
-    
     public String getNombre() {
         return Nombre;
     }
@@ -92,9 +93,19 @@ public class equipos {
     public void setColor_principal(String Color_principal) {
         this.Color_principal = Color_principal;
     }
-    
-    
-    
-    
+
+    public ArrayList<Jugadores> getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(ArrayList<Jugadores> jugador) {
+        this.jugador = jugador;
+    }
+
+    @Override
+    public String toString() {
+        return "equipos{" + "Nombre=" + Nombre + ", estadio=" + estadio + ", pais=" + pais + ", Nombre_de_Entrenador=" + Nombre_de_Entrenador + ", Nombre_de_Due\u00f1o=" + Nombre_de_Dueño + ", Nombre_de_Mascota=" + Nombre_de_Mascota + ", Fecha_de_creacion=" + Fecha_de_creacion + ", Color_principal=" + Color_principal + ", jugador=" + jugador + '}';
+    }
+
     
 }
