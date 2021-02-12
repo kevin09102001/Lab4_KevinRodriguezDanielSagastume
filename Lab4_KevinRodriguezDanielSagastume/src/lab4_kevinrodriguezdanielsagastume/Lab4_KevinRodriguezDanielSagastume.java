@@ -17,7 +17,7 @@ public class Lab4_KevinRodriguezDanielSagastume {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         ArrayList<equipos> Equipos = new ArrayList();
         int op = 0;
         while (op != 4) {
@@ -111,7 +111,6 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                                     JOptionPane.showMessageDialog(null, "opcion equivocada");
                                                     break;
                                             }
-
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
                                             jugadores1.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             jugador++;
@@ -177,23 +176,25 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                 }
                                 break;//Modificar equipo
                             case 2:
-                                String salida3 = "";
+                                String salida4 = "";
                                 for (Object t : Equipos) {
                                     if (t instanceof equipos) {
-                                        salida3 += Equipos.indexOf(t) + "- " + t + "\n";
+                                        salida4 += Equipos.indexOf(t) + "- " + t + "\n";
                                     }
                                 }
-                                int p3 = Integer.parseInt(JOptionPane.showInputDialog(salida3 + "\n"
+                                int p4 = Integer.parseInt(JOptionPane.showInputDialog(salida4 + "\n"
                                         + "Ingrese el equipo que quiere modificar los jugadores"));
-                                if (Equipos.get(p3) instanceof equipos) {
-                                    ArrayList<Jugadores> jugadores = new ArrayList();
-                                    int jugador = 0;
-                                    int tirador = 0;
-                                    int pateador = 0;
-                                    while (jugador <= 5) {
-                                        int op_B = Integer.parseInt(JOptionPane.showInputDialog("1. Agregar pateador\n"
-                                                + "2. Agregar tirador"));
-                                        if (op_B == 1 && pateador <= 3) {
+                                if (Equipos.get(p4) instanceof equipos) {
+                                    String salida5 = "";
+                                    for (Object t : Equipos.get(p4).getJugador()) {
+                                        if (t instanceof Jugadores) {
+                                            salida5 += Equipos.indexOf(t) + "- " + t + "\n";
+                                        }
+                                    }
+                                    int p5 = Integer.parseInt(JOptionPane.showInputDialog(salida5 + "\n"
+                                            + "Ingrese el jugador que quiere modificar"));
+                                    if (Equipos.get(p4).getJugador().get(p5) instanceof Jugadores) {
+                                        if (Equipos.get(p4).getJugador().get(p5) instanceof Pateadores) {
                                             String NombreJ = JOptionPane.showInputDialog("Ingrese el nombre del jugador: ");
                                             String Apodo = JOptionPane.showInputDialog("Ingrese el apodo del jugador: ");
                                             String NumerodeCamiseta = JOptionPane.showInputDialog("Ingrese el numero de la camiseta del jugador: ");
@@ -209,9 +210,9 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                             int Habilidad_Pateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad pateadora(1-100) "));
                                             int Fuerza = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la fuerza(1-100): "));
                                             int Habilidad_Regateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad regateadora(1-100) "));
-                                            jugadores.add(new Pateadores(Habilidad_Pateadora, Fuerza, Habilidad_Regateadora, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
-                                            jugador++;
-                                        } else if (op_B == 2 && tirador <= 2) {
+                                            ((equipos) Equipos.get(p4)).getJugador().set(p5, new Pateadores(Habilidad_Pateadora, Fuerza, Habilidad_Regateadora, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
+
+                                        } else if (Equipos.get(p4).getJugador().get(p5) instanceof Tiradores) {
                                             String NombreJ = JOptionPane.showInputDialog("Ingrese el nombre del jugador: ");
                                             String Apodo = JOptionPane.showInputDialog("Ingrese el apodo del jugador: ");
                                             String NumerodeCamiseta = JOptionPane.showInputDialog("Ingrese el numero de la camiseta del jugador: ");
@@ -224,36 +225,105 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                             while (numero_estrellas <= 0 || numero_estrellas >= 5) {//Validacion
                                                 numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Numero de estrellas debe ser (1-5): "));
                                             }
-                                            int Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) "));
-                                            int tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
+                                            int opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro que desea: \n" + "1) Tiro 3  \n" + "2) Tiro 2 \n"));
+                                            int Tiro3 = 0, tiro2 = 0;
+                                            switch (opc) {
+                                                case 1:
+                                                    Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) "));
+                                                    tiro2 = 0;
+                                                    break;
+                                                case 2:
+                                                    tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
+                                                    Tiro3 = 0;
+                                                    break;
+                                                default:
+                                                    JOptionPane.showMessageDialog(null, "opcion equivocada");
+                                                    break;
+                                            }
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
-                                            jugadores.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
-                                            jugador++;
-                                        }//Fin de tirador
-                                        ((equipos) Equipos.get(p3)).setJugador(jugadores);
+                                            ((equipos) Equipos.get(p4)).getJugador().set(p5, new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
+                                        }
                                     }
                                 }
-                                break;//Modificar jugadores
-                        }//Fin del switch modificar jugares o equipo
-                    }
-                    break;//break modificar
-                case 3://Eliminar
-                    String salida3 = "";
-                    for (Object t : Equipos) {
-                        if (t instanceof equipos) {
-                            salida3 += Equipos.indexOf(t) + "- " + t + "\n";
+                                break;
                         }
                     }
-                    int p3 = Integer.parseInt(JOptionPane.showInputDialog(salida3 + "\n"
-                            + "Ingrese el equipo que quiere eliminar"));
-                    if (Equipos.get(p3) instanceof equipos) {
-                        Equipos.remove(p3);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Equipo equivocado");
-                    }
-                    break;//Break modificar
-                case 4:// JUGAR
+                    break;//break modificar
 
+                case 3://Eliminar
+                    int op_D = 0;
+                    while (op_D != 3) {
+                        op_D = Integer.parseInt(JOptionPane.showInputDialog("1. Modificar equipo\n"
+                                + "2. Modificar jugadores de un equipo\n"
+                                + "3. Salir"));
+                        switch (op_D) {
+                            case 1://Eliminar equipos
+                                String salida3 = "";
+                                for (Object t : Equipos) {
+                                    if (t instanceof equipos) {
+                                        salida3 += Equipos.indexOf(t) + "- " + t + "\n";
+                                    }
+                                }
+                                int p3 = Integer.parseInt(JOptionPane.showInputDialog(salida3 + "\n"
+                                        + "Ingrese el equipo que quiere eliminar"));
+                                if (Equipos.get(p3) instanceof equipos) {
+                                    Equipos.remove(p3);
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Equipo equivocado");
+                                }
+                                break;//Break modificar
+
+                            case 2:// Eliminar jugadores
+                                char resp = 's';
+                                while (resp == 's' || resp == 'S') {
+                                    ArrayList<equipos> Jugador1 = new ArrayList();
+                                    String salida5 = "";
+                                    for (Object t : Equipos) {
+                                        if (t instanceof equipos) {
+                                            salida5 += Equipos.indexOf(t) + "- " + t + "\n";
+                                        }
+                                    }
+                                    int p5 = Integer.parseInt(JOptionPane.showInputDialog(salida5 + "\n"
+                                            + "Ingrese el equipo que quiere eliminar los jugadores"));
+                                    if (Equipos.get(p5) instanceof equipos) {
+                                        String salida6 = "";
+                                        for (Object t : Equipos.get(p5).getJugador()) {
+                                            if (t instanceof Jugadores) {
+                                                salida6 += Equipos.indexOf(t) + "- " + t + "\n";
+                                            }
+                                        }
+                                        int p6 = Integer.parseInt(JOptionPane.showInputDialog(salida6 + "\n"
+                                                + "Ingrese el jugador que quiere eliminar"));
+                                        if (Equipos.get(p5).getJugador().get(p6) instanceof Jugadores) {
+
+                                            Equipos.get(p5).getJugador().remove(p6);
+                                        }
+                                    }
+                                    resp = (JOptionPane.showInputDialog("Desea eliminar otro jugador(s/n): ")).charAt(0);
+                                }
+                                break;//Break jugar
+                        }
+                    }
+                    break;
+                case 4:// JUGAR 
+                    String salida = "";
+                    for (Object t : Equipos) {
+                        if (t instanceof equipos) {
+                            salida += Equipos.indexOf(t) + "- " + t + "\n";
+                        }
+                    }
+                    int Jugador1 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
+                            + "Jugador 2 Ingrese el equipo que desee"));
+                    for (Object t : Equipos) {
+                        if (t instanceof equipos) {
+                            salida += Equipos.indexOf(t) + "- " + t + "\n";
+                        }
+                    }
+                    int Jugador2 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
+                            + "Jugador 2 Ingrese el equipo que desee"));
+                    if (Jugador1!=Jugador2) {
+                        
+                    }
                     break;//Break jugar
             }//Fin del switch PRINCIPAL
         }//Fin del while PRINCIPAL
