@@ -96,8 +96,18 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                             while (numero_estrellas <= 0 || numero_estrellas >= 5) {//Validacion
                                                 numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Numero de estrellas debe ser (1-5): "));
                                             }
-                                            int Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) "));
-                                            int tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
+                                            int opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro que desea: \n"+"1) Tiro 3  \n"+"2) Tiro 2 \n"));
+                                            int Tiro3 = 0,tiro2 = 0;
+                                            switch(opc){
+                                                case 1:
+                                                    Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) ")); 
+                                                    tiro2=0;
+                                                case 2:
+                                                    tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
+                                                    Tiro3=0;
+                                                default:
+                                                     JOptionPane.showMessageDialog(null, "opcion equivocada");
+                                            }
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
                                             jugadores1.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             jugador++;
@@ -127,7 +137,6 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                 int p = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
                                         + "Ingrese el equipo que quiere modificar"));
                                 if (Equipos.get(p) instanceof equipos) {
-                                    ArrayList<Jugadores> jugadores = new ArrayList();
                                     int op_D = Integer.parseInt(JOptionPane.showInputDialog("1. Modificar nombre del equipo\n"
                                             + "2. Modificar el estadio\n"
                                             + "3. Modificar pais\n"
@@ -139,35 +148,110 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                     if (op_D == 1) {
                                         String Nombre = JOptionPane.showInputDialog("Ingrese el nombre del equipo: ");
                                         ((equipos) Equipos.get(p)).setNombre(Nombre);
+                                    } else if (op_D == 2) {
+                                        String estadio = JOptionPane.showInputDialog("Ingrese el estadio del equipo: ");
+                                        ((equipos) Equipos.get(p)).setEstadio(estadio);
+                                    } else if (op_D == 3) {
+                                        String pais = JOptionPane.showInputDialog("Ingrese el pais del equipo: ");
+                                        ((equipos) Equipos.get(p)).setPais(pais);
+                                    } else if (op_D == 4) {
+                                        String Nombre_de_Entrenador = JOptionPane.showInputDialog("Ingrese el nombre del entrenador del equipo: ");
+                                        ((equipos) Equipos.get(p)).setNombre_de_Entrenador(Nombre_de_Entrenador);
+                                    } else if (op_D == 5) {
+                                        String Nombre_de_Dueño = JOptionPane.showInputDialog("Ingrese el nombre del dueño del equipo: ");
+                                        ((equipos) Equipos.get(p)).setNombre_de_Dueño(Nombre_de_Dueño);
+                                    } else if (op_D == 6) {
+                                        String Nombre_de_Mascota = JOptionPane.showInputDialog("Ingrese el nombre de la mascota del equipo: ");
+                                        ((equipos) Equipos.get(p)).setNombre_de_Mascota(Nombre_de_Mascota);
+                                    } else if (op_D == 7) {
+                                        String Fecha_de_creacion = JOptionPane.showInputDialog("Ingrese la fecha de creacion del equipo: ");
+                                        ((equipos) Equipos.get(p)).setFecha_de_creacion(Fecha_de_creacion);
+                                    } else if (op_D == 8) {
+                                        String Color_principal = JOptionPane.showInputDialog("Ingrese el color principal del equipo: ");
+                                        ((equipos) Equipos.get(p)).setColor_principal(Color_principal);
                                     }
-
                                 }
                                 break;//Modificar equipo
                             case 2:
-                                ArrayList<Jugadores> jugadores = new ArrayList();
-                                String salida2 = "";
+                                String salida3 = "";
                                 for (Object t : Equipos) {
                                     if (t instanceof equipos) {
-                                        salida2 += Equipos.indexOf(t) + "- " + t + "\n";
+                                        salida3 += Equipos.indexOf(t) + "- " + t + "\n";
                                     }
                                 }
-                                int p2 = Integer.parseInt(JOptionPane.showInputDialog(salida2 + "\n"
-                                        + "Ingrese el equipo que quiere agregar los jugadores"));
-                                if (Equipos.get(p2) instanceof equipos) {
-
+                                int p3 = Integer.parseInt(JOptionPane.showInputDialog(salida3 + "\n"
+                                        + "Ingrese el equipo que quiere modificar los jugadores"));
+                                if (Equipos.get(p3) instanceof equipos) {
+                                    ArrayList<Jugadores> jugadores = new ArrayList();
+                                    int jugador = 0;
+                                    int tirador = 0;
+                                    int pateador = 0;
+                                    while (jugador <= 5) {
+                                        int op_B = Integer.parseInt(JOptionPane.showInputDialog("1. Agregar pateador\n"
+                                                + "2. Agregar tirador"));
+                                        if (op_B == 1 && pateador <= 3) {
+                                            String NombreJ = JOptionPane.showInputDialog("Ingrese el nombre del jugador: ");
+                                            String Apodo = JOptionPane.showInputDialog("Ingrese el apodo del jugador: ");
+                                            String NumerodeCamiseta = JOptionPane.showInputDialog("Ingrese el numero de la camiseta del jugador: ");
+                                            String EquipodeFutbolFavorito = JOptionPane.showInputDialog("Ingrese el equipo de futbol favorito del jugador: ");
+                                            String EquipodeBaloncesto_Favorito = JOptionPane.showInputDialog("Ingrese el equipo de baloncesto favorito del jugador: ");
+                                            String JugadorFavorito = JOptionPane.showInputDialog("Ingrese el jugador favorito del jugador: ");
+                                            String mayor_edad = JOptionPane.showInputDialog("Ingrese si el jugador es mayor de edad: ");
+                                            int año_Nacimiento = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año de nacimiento del jugador: "));
+                                            int numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de estrellas(1-5) "));
+                                            while (numero_estrellas <= 0 || numero_estrellas >= 5) {//Validacion
+                                                numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Numero de estrellas debe ser (1-5): "));
+                                            }
+                                            int Habilidad_Pateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad pateadora(1-100) "));
+                                            int Fuerza = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la fuerza(1-100): "));
+                                            int Habilidad_Regateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad regateadora(1-100) "));
+                                            jugadores.add(new Pateadores(Habilidad_Pateadora, Fuerza, Habilidad_Regateadora, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
+                                            jugador++;
+                                        } else if (op_B == 2 && tirador <= 2) {
+                                            String NombreJ = JOptionPane.showInputDialog("Ingrese el nombre del jugador: ");
+                                            String Apodo = JOptionPane.showInputDialog("Ingrese el apodo del jugador: ");
+                                            String NumerodeCamiseta = JOptionPane.showInputDialog("Ingrese el numero de la camiseta del jugador: ");
+                                            String EquipodeFutbolFavorito = JOptionPane.showInputDialog("Ingrese el equipo de futbol favorito del jugador: ");
+                                            String EquipodeBaloncesto_Favorito = JOptionPane.showInputDialog("Ingrese el equipo de baloncesto favorito del jugador: ");
+                                            String JugadorFavorito = JOptionPane.showInputDialog("Ingrese el jugador favorito del jugador: ");
+                                            String mayor_edad = JOptionPane.showInputDialog("Ingrese si el jugador es mayor de edad: ");
+                                            int año_Nacimiento = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año de nacimiento del jugador: "));
+                                            int numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de estrellas(1-5) "));
+                                            while (numero_estrellas <= 0 || numero_estrellas >= 5) {//Validacion
+                                                numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Numero de estrellas debe ser (1-5): "));
+                                            }
+                                            int Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) "));
+                                            int tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
+                                            int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
+                                            jugadores.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
+                                            jugador++;
+                                        }//Fin de tirador
+                                        ((equipos) Equipos.get(p3)).setJugador(jugadores);
+                                    }
                                 }
-                                break;//Modificar jugador
+                                break;//Modificar jugadores
                         }//Fin del switch modificar jugares o equipo
                     }
                     break;//break modificar
-                case 3:{
-                    
-                }
-                case 4:{
-                    
-                }
+                case 3://Eliminar
+                    String salida3 = "";
+                    for (Object t : Equipos) {
+                        if (t instanceof equipos) {
+                            salida3 += Equipos.indexOf(t) + "- " + t + "\n";
+                        }
+                    }
+                    int p3 = Integer.parseInt(JOptionPane.showInputDialog(salida3 + "\n"
+                            + "Ingrese el equipo que quiere eliminar"));
+                    if (Equipos.get(p3) instanceof equipos) {
+                        Equipos.remove(p3);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Equipo equivocado");
+                    }
+                    break;//Break modificar
+                case 4:// JUGAR
+
+                    break;//Break jugar
             }//Fin del switch PRINCIPAL
         }//Fin del while PRINCIPAL
     }//Fin del MAIN
-
 }

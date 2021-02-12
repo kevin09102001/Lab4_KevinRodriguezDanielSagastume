@@ -61,7 +61,7 @@ public class Tiradores extends Jugadores {
     @Override
     public String Probabilidad() {
         String resultado = "";
-        if (Tiro3 == 0) {
+        if (tiro2 == 0) {
             int pro = (int) ((Tiro3 + ManejoBalon) * 0.90 * numero_estrellas / 10);
             int numer = r.nextInt(101);
             if (numer >= 1 && numer <= pro) {
@@ -69,7 +69,7 @@ public class Tiradores extends Jugadores {
             } else if (numer > pro && numer <= 100) {
                 resultado = "El jugador no anoto";
             }
-        } else if (tiro2 == 0) {
+        } else if (Tiro3 == 0) {
             int pro = (int) ((tiro2 + ManejoBalon) * 0.95 * numero_estrellas / 10);
             int numer = r.nextInt(101);
             if (numer >= 1 && numer <= pro) {
