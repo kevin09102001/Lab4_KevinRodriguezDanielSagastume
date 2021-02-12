@@ -5,11 +5,15 @@
  */
 package lab4_kevinrodriguezdanielsagastume;
 
+import java.util.Random;
+
 /**
  *
  * @author Kevin
  */
-public final class Pateadores extends Jugadores{
+public  class Pateadores extends Jugadores{
+    Random r=new Random();
+    
     public int Habilidad_Pateadora,Fuerza,Habilidad_Regateadora;
 
     public Pateadores(int Habilidad_Pateadora, int Fuerza, int Habilidad_Regateadora, String NombreJ, String Apodo, String NumerodeCamiseta, String EquipodeFutbolFavorito, String EquipodeBaloncesto_Favorito, String JugadorFavorito, String mayor_edad, int año_Nacimiento, int numero_estrellas) {
@@ -54,7 +58,21 @@ public final class Pateadores extends Jugadores{
     public String toString() {
         return super.toString()+" "+"Pateadores{" + "Habilidad_Pateadora=" + Habilidad_Pateadora + ", Fuerza=" + Fuerza + ", Habilidad_Regateadora=" + Habilidad_Regateadora + '}';
     }
+
+    @Override
+    public String Probabilidad() {
+        String resultado = "";
+        int pro=(int) ((Habilidad_Pateadora+Fuerza+Habilidad_Regateadora)*0.65*numero_estrellas/10);
+        int numer=r.nextInt(101);
+        if (numer>=1 && numer<=pro) {
+            resultado= "El jugador anoto";
+        }else if(numer>pro && numer<=100){
+            resultado= "El jugador no anoto";
+        }
+        return resultado;
+    }
     
+ 
     
     
 }

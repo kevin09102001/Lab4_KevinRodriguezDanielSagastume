@@ -9,7 +9,7 @@ package lab4_kevinrodriguezdanielsagastume;
  *
  * @author Kevin
  */
-public final class Tiradores extends Jugadores{
+public  class Tiradores extends Jugadores{
     public int Tiro3,tiro2,ManejoBalon;
 
     public Tiradores(int Tiro3, int tiro2, int ManejoBalon, String NombreJ, String Apodo, String NumerodeCamiseta, String EquipodeFutbolFavorito, String EquipodeBaloncesto_Favorito, String JugadorFavorito, String mayor_edad, int año_Nacimiento, int numero_estrellas) {
@@ -53,6 +53,12 @@ public final class Tiradores extends Jugadores{
     public String toString() {
         return super.toString()+" "+"Tiradores{" + "Tiro3=" + Tiro3 + ", tiro2=" + tiro2 + ", ManejoBalon=" + ManejoBalon + '}';
     }
+
+    @Override
+    public String Probabilidad() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     
 }

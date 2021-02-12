@@ -9,7 +9,7 @@ package lab4_kevinrodriguezdanielsagastume;
  *
  * @author Kevin
  */
-public class Jugadores {
+public abstract class Jugadores {
 
     protected String NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad;
     protected int año_Nacimiento, numero_estrellas;
@@ -27,7 +27,7 @@ public class Jugadores {
         this.JugadorFavorito = JugadorFavorito;
         this.mayor_edad = mayor_edad;
         this.año_Nacimiento = año_Nacimiento;
-        this.numero_estrellas = numero_estrellas;
+        setNumero_estrellas(numero_estrellas);
     }
 
     public String getNombreJ() {
@@ -99,12 +99,17 @@ public class Jugadores {
     }
 
     public void setNumero_estrellas(int numero_estrellas) {
-        this.numero_estrellas = numero_estrellas;
+        if (numero_estrellas>=1 || numero_estrellas<=5) {
+            this.numero_estrellas = numero_estrellas;
+        }
+        
     }
 
     @Override
     public String toString() {
         return "Jugadores{" + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", a\u00f1o_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas ;
     }
+    
+    public abstract String Probabilidad();
 
 }
