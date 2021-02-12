@@ -104,7 +104,7 @@ public class Jugadores {
 
     @Override
     public String toString() {
-        return "Jugadores{" + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", a\u00f1o_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas + '}';
+        return "Jugadores{" + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", a\u00f1o_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas ;
     }
 
 }
