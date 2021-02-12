@@ -27,7 +27,7 @@ public abstract class Jugadores {
         this.JugadorFavorito = JugadorFavorito;
         this.mayor_edad = mayor_edad;
         this.año_Nacimiento = año_Nacimiento;
-        setNumero_estrellas(numero_estrellas);
+        this.setNumero_estrellas(numero_estrellas);
     }
 
     public String getNombreJ() {

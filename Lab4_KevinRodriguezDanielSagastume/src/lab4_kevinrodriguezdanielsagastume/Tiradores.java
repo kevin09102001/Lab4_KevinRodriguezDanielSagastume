@@ -14,9 +14,9 @@ public  class Tiradores extends Jugadores{
 
     public Tiradores(int Tiro3, int tiro2, int ManejoBalon, String NombreJ, String Apodo, String NumerodeCamiseta, String EquipodeFutbolFavorito, String EquipodeBaloncesto_Favorito, String JugadorFavorito, String mayor_edad, int año_Nacimiento, int numero_estrellas) {
         super(NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas);
-        setTiro3(Tiro3);
-        setTiro2(tiro2);
-        setManejoBalon(ManejoBalon);
+        this.setTiro3(Tiro3);
+        this.setTiro2(tiro2);
+        this.setManejoBalon(ManejoBalon);
     }
 
     public int getTiro3() {
