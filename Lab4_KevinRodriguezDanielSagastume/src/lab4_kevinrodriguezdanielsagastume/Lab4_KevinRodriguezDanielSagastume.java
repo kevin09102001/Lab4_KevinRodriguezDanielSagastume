@@ -96,18 +96,22 @@ public class Lab4_KevinRodriguezDanielSagastume {
                                             while (numero_estrellas <= 0 || numero_estrellas >= 5) {//Validacion
                                                 numero_estrellas = Integer.parseInt(JOptionPane.showInputDialog("Numero de estrellas debe ser (1-5): "));
                                             }
-                                            int opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro que desea: \n"+"1) Tiro 3  \n"+"2) Tiro 2 \n"));
-                                            int Tiro3 = 0,tiro2 = 0;
-                                            switch(opc){
+                                            int opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro que desea: \n" + "1) Tiro 3  \n" + "2) Tiro 2 \n"));
+                                            int Tiro3 = 0, tiro2 = 0;
+                                            switch (opc) {
                                                 case 1:
-                                                    Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) ")); 
-                                                    tiro2=0;
+                                                    Tiro3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 3(1-100) "));
+                                                    tiro2 = 0;
+                                                    break;
                                                 case 2:
                                                     tiro2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tiro de 2(1-100) "));
-                                                    Tiro3=0;
+                                                    Tiro3 = 0;
+                                                    break;
                                                 default:
-                                                     JOptionPane.showMessageDialog(null, "opcion equivocada");
+                                                    JOptionPane.showMessageDialog(null, "opcion equivocada");
+                                                    break;
                                             }
+
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
                                             jugadores1.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             jugador++;
