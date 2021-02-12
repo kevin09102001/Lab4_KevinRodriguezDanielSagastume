@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab4_kevinrodriguezdanielsagastume;
+package lab4_kevinrodriguez_danielsagastume;
 
 /**
  *
@@ -110,6 +110,6 @@ public abstract class Jugadores {
         return "Jugadores{" + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", a\u00f1o_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas ;
     }
     
-    public abstract String Probabilidad();
+    public abstract int Probabilidad();
 
 }

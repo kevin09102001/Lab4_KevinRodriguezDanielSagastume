@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab4_kevinrodriguezdanielsagastume;
+package lab4_kevinrodriguez_danielsagastume;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Kevin
  */
-public class Lab4_KevinRodriguezDanielSagastume {
+public class Lab4_KevinRodriguez_DanielSagastume {
 
     /**
      * @param args the command line arguments
@@ -313,14 +313,14 @@ public class Lab4_KevinRodriguezDanielSagastume {
                         }
                     }
                     int Jugador1 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
-                            + "Jugador 2 Ingrese el equipo que desee"));
+                            + "Jugador 2 Ingrese el equipo que desee ♠"));
                     for (Object t : Equipos) {
                         if (t instanceof equipos) {
                             salida += Equipos.indexOf(t) + "- " + t + "\n";
                         }
                     }
                     int Jugador2 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
-                            + "Jugador 2 Ingrese el equipo que desee"));
+                            + "Jugador 2 Ingrese el equipo que desee ♠"));
                     if (Jugador1!=Jugador2) {
                         
                     }

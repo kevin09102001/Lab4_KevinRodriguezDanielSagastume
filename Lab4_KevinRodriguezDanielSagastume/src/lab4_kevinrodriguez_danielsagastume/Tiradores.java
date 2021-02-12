@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab4_kevinrodriguezdanielsagastume;
+package lab4_kevinrodriguez_danielsagastume;
 
 import java.util.Random;
 
@@ -59,23 +59,23 @@ public class Tiradores extends Jugadores {
     }
 
     @Override
-    public String Probabilidad() {
-        String resultado = "";
+    public int Probabilidad() {
+        int resultado = 0;
         if (tiro2 == 0) {
             int pro = (int) ((Tiro3 + ManejoBalon) * 0.90 * numero_estrellas / 10);
             int numer = r.nextInt(101);
             if (numer >= 1 && numer <= pro) {
-                resultado = "El jugador anoto";
+                resultado = 3;
             } else if (numer > pro && numer <= 100) {
-                resultado = "El jugador no anoto";
+                resultado = 0;
             }
         } else if (Tiro3 == 0) {
             int pro = (int) ((tiro2 + ManejoBalon) * 0.95 * numero_estrellas / 10);
             int numer = r.nextInt(101);
             if (numer >= 1 && numer <= pro) {
-                resultado = "El jugador anoto";
+                resultado = 2;
             } else if (numer > pro && numer <= 100) {
-                resultado = "El jugador no anoto";
+                resultado = 0;
             }
         }
         return resultado;

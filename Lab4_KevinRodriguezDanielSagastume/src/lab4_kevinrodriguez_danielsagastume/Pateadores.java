@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab4_kevinrodriguezdanielsagastume;
+package lab4_kevinrodriguez_danielsagastume;
 
 import java.util.Random;
 
@@ -61,14 +61,14 @@ public class Pateadores extends Jugadores {
     }
 
     @Override
-    public String Probabilidad() {
-        String resultado = "";
+    public int Probabilidad() {
+        int resultado = 0 ;
         int pro = (int) ((Habilidad_Pateadora + Fuerza + Habilidad_Regateadora) * 0.65 * numero_estrellas / 10);
         int numer = r.nextInt(101);
         if (numer >= 1 && numer <= pro) {
-            resultado = "El jugador anoto";
+            resultado = 1;
         } else if (numer > pro && numer <= 100) {
-            resultado = "El jugador no anoto";
+            resultado = 1;
         }
         return resultado;
     }
