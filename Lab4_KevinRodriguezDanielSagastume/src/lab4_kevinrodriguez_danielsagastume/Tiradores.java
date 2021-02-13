@@ -55,7 +55,7 @@ public class Tiradores extends Jugadores {
 
     @Override
     public String toString() {
-        return super.toString() + " " + "Tiradores{" + "Tiro3=" + Tiro3 + ", tiro2=" + tiro2 + ", ManejoBalon=" + ManejoBalon + '}';
+        return super.toString() + " " + "Tiradores{" + "Tiro3=" + Tiro3 + ", tiro2=" + tiro2 + ", ManejoBalon=" + ManejoBalon + '}'+"\n";
     }
 
     @Override

@@ -107,7 +107,7 @@ public abstract class Jugadores {
 
     @Override
     public String toString() {
-        return "Jugadores= " + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", año_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas ;
+        return "Jugadores= " + "NombreJ=" + NombreJ + ", Apodo=" + Apodo + ", NumerodeCamiseta=" + NumerodeCamiseta + ", EquipodeFutbolFavorito=" + EquipodeFutbolFavorito + ", EquipodeBaloncesto_Favorito=" + EquipodeBaloncesto_Favorito + ", JugadorFavorito=" + JugadorFavorito + ", mayor_edad=" + mayor_edad + ", año_Nacimiento=" + año_Nacimiento + ", numero_estrellas=" + numero_estrellas +"\n";
     }
     
     public abstract int Probabilidad();

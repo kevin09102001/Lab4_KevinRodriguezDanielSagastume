@@ -57,7 +57,7 @@ public class Pateadores extends Jugadores {
 
     @Override
     public String toString() {
-        return super.toString() + " " + "Pateadores{" + "Habilidad_Pateadora=" + Habilidad_Pateadora + ", Fuerza=" + Fuerza + ", Habilidad_Regateadora=" + Habilidad_Regateadora + '}';
+        return super.toString() + " " + "Pateadores{" + "Habilidad_Pateadora=" + Habilidad_Pateadora + ", Fuerza=" + Fuerza + ", Habilidad_Regateadora=" + Habilidad_Regateadora + '}'+"\n";
     }
 
     @Override

@@ -73,7 +73,6 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                             int Habilidad_Pateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad pateadora(1-100) "));
                                             int Fuerza = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la fuerza(1-100): "));
                                             int Habilidad_Regateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad regateadora(1-100) "));
-                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugadores1.add(new Pateadores(Habilidad_Pateadora, Fuerza, Habilidad_Regateadora, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             jugador++;
                                             ((equipos) Equipos.get(p)).setJugador(jugadores1);
@@ -106,7 +105,6 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                                     break;
                                             }
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
-                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugadores1.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugador++;
