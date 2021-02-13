@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4_kevinrodriguez_danielsagastume;
 
 import java.util.ArrayList;
@@ -14,10 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class Lab4_KevinRodriguez_DanielSagastume {
 
-    /**
-     * @param args the command line arguments
-     */
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayList<equipos> Equipos = new ArrayList();
         int op = 0;
         while (op != 4) {
@@ -81,8 +73,10 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                             int Habilidad_Pateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad pateadora(1-100) "));
                                             int Fuerza = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la fuerza(1-100): "));
                                             int Habilidad_Regateadora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la habilidad regateadora(1-100) "));
+                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugadores1.add(new Pateadores(Habilidad_Pateadora, Fuerza, Habilidad_Regateadora, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
                                             jugador++;
+                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                         } else if (op_B == 2 && tirador <= 2) {
                                             String NombreJ = JOptionPane.showInputDialog("Ingrese el nombre del jugador: ");
                                             String Apodo = JOptionPane.showInputDialog("Ingrese el apodo del jugador: ");
@@ -112,7 +106,9 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                                     break;
                                             }
                                             int ManejoBalon = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el manejo de balon(1-100) "));
+                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugadores1.add(new Tiradores(Tiro3, tiro2, ManejoBalon, NombreJ, Apodo, NumerodeCamiseta, EquipodeFutbolFavorito, EquipodeBaloncesto_Favorito, JugadorFavorito, mayor_edad, año_Nacimiento, numero_estrellas));
+                                            ((equipos) Equipos.get(p)).setJugador(jugadores1);
                                             jugador++;
                                         }//Fin de tirador
                                         //Fin opcion 1 Agregar pateador
@@ -188,7 +184,7 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                     String salida5 = "";
                                     for (Object t : Equipos.get(p4).getJugador()) {
                                         if (t instanceof Jugadores) {
-                                            salida5 += Equipos.indexOf(t) + "- " + t + "\n";
+                                            salida5 += Equipos.get(p4).getJugador().indexOf(t) + "- " + t + "\n";
                                         }
                                     }
                                     int p5 = Integer.parseInt(JOptionPane.showInputDialog(salida5 + "\n"
@@ -276,7 +272,6 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                             case 2:// Eliminar jugadores
                                 char resp = 's';
                                 while (resp == 's' || resp == 'S') {
-                                    ArrayList<equipos> Jugador1 = new ArrayList();
                                     String salida5 = "";
                                     for (Object t : Equipos) {
                                         if (t instanceof equipos) {
@@ -289,7 +284,7 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                         String salida6 = "";
                                         for (Object t : Equipos.get(p5).getJugador()) {
                                             if (t instanceof Jugadores) {
-                                                salida6 += Equipos.indexOf(t) + "- " + t + "\n";
+                                                salida6 += Equipos.get(p5).getJugador().indexOf(t) + "- " + t + "\n";
                                             }
                                         }
                                         int p6 = Integer.parseInt(JOptionPane.showInputDialog(salida6 + "\n"
@@ -301,31 +296,149 @@ public class Lab4_KevinRodriguez_DanielSagastume {
                                     }
                                     resp = (JOptionPane.showInputDialog("Desea eliminar otro jugador(s/n): ")).charAt(0);
                                 }
-                                break;//Break jugar
+                                break;//Break ¿
                         }
                     }
                     break;
-                case 4:// JUGAR 
+                case 4:
+                    equipos Equipo1 = new equipos();
+                    equipos Equipo2 = new equipos();
                     String salida = "";
                     for (Object t : Equipos) {
                         if (t instanceof equipos) {
                             salida += Equipos.indexOf(t) + "- " + t + "\n";
                         }
                     }
-                    int Jugador1 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
-                            + "Jugador 2 Ingrese el equipo que desee ♠"));
+                    int p = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
+                            + "Jugador1 Eliga su equipo"));
+                    if (Equipos.get(p) instanceof equipos) {
+                        Equipo1 = ((equipos) Equipos.get(p));
+                    }
+                    String salida1 = "";
                     for (Object t : Equipos) {
-                        if (t instanceof equipos) {
-                            salida += Equipos.indexOf(t) + "- " + t + "\n";
+                        if (t instanceof equipos && t != Equipo1) {
+                            salida1 += Equipos.indexOf(t) + "- " + t + "\n";
                         }
                     }
-                    int Jugador2 = Integer.parseInt(JOptionPane.showInputDialog(salida + "\n"
-                            + "Jugador 2 Ingrese el equipo que desee ♠"));
-                    if (Jugador1!=Jugador2) {
-                        
+                    int p1 = Integer.parseInt(JOptionPane.showInputDialog(salida1 + "\n"
+                            + "Jugador2 Eliga su equipo"));
+                    if (Equipos.get(p1) instanceof equipos) {
+                        Equipo2 = ((equipos) Equipos.get(p1));
+                    }
+                    int puntos1 = 0;
+                    int puntos2 = 0;
+                    int turno = 1;
+                    ArrayList<String> Jugador_punto1 = new ArrayList();
+                    ArrayList<String> Jugador_punto2 = new ArrayList();
+                    int J0_P1 = 0;
+                    int J1_P1 = 0;
+                    int J2_P1 = 0;
+                    int J3_P1 = 0;
+                    int J4_P1 = 0;
+                    int J0_P2 = 0;
+                    int J1_P2 = 0;
+                    int J2_P2 = 0;
+                    int J3_P2 = 0;
+                    int J4_P2 = 0;
+                    while (puntos1 < 11 && puntos2 < 11) {
+                        char resp_p = 's';
+                        int pases = 0;
+                        while (resp_p == 's' || resp_p == 'S' && turno == 1 && pases < 5) {
+                            String salida2 = "";
+                            for (Object t : Equipo1.jugador) {
+                                if (t instanceof Jugadores) {
+                                    salida2 += Equipo1.getJugador().indexOf(t) + "- " + t + "\n";
+                                }
+                            }
+                            int p2 = Integer.parseInt(JOptionPane.showInputDialog(salida2 + "\n"
+                                    + "Jugador1 Eliga su jugador que reciba el balon"));
+                            if (Equipo1.getJugador().get(p2) instanceof Jugadores) {
+                                int punto_anotado;
+                                resp_p = (JOptionPane.showInputDialog(Equipo1.getJugador().get(p2).getNombreJ() + " tiene el balon " + " Desea dar pase a otro jugar(s/n): ")).charAt(0);
+                                if (resp_p == 'n' || resp_p == 'N') {
+                                    punto_anotado = Equipo1.getJugador().get(p).Probabilidad();
+                                    puntos1 += punto_anotado;
+                                    if (punto_anotado > 0) {
+                                        JOptionPane.showMessageDialog(null, "Felicidades anotaste " + punto_anotado);
+
+                                        if (p2 == 0) {
+                                            J0_P1 += punto_anotado;
+                                        } else if (p2 == 1) {
+                                            J1_P1 += punto_anotado;
+                                        } else if (p2 == 2) {
+                                            J2_P1 += punto_anotado;
+                                        } else if (p2 == 3) {
+                                            J3_P1 += punto_anotado;
+                                        } else if (p2 == 4) {
+                                            J4_P1 += punto_anotado;
+                                        }
+                                        turno = 2;
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "Fallaste");
+                                    }
+                                } else if (resp_p == 's' || resp_p == 'S') {
+                                    pases++;
+                                }
+                            }
+                        }//Fin turno 1
+                        char resp_p2 = 's';
+                        int pases2 = 0;
+
+                        while (resp_p2 == 's' || resp_p2 == 'S' && turno == 2 && pases2 < 5) {
+                            String salida2 = "";
+                            for (Object t : Equipo2.jugador) {
+                                if (t instanceof Jugadores) {
+                                    salida2 += Equipo2.getJugador().indexOf(t) + "- " + t + "\n";
+                                }
+                            }
+                            int p2 = Integer.parseInt(JOptionPane.showInputDialog(salida2 + "\n"
+                                    + "Jugador2 Eliga su jugador que reciba el balon"));
+                            if (Equipo2.getJugador().get(p2) instanceof Jugadores) {
+                                int punto_anotado;
+                                resp_p = (JOptionPane.showInputDialog(Equipo2.getJugador().get(p2).getNombreJ() + " tiene el balon " + " Desea dar pase a otro jugar(s/n): ")).charAt(0);
+                                if (resp_p == 'n' || resp_p == 'N') {
+                                    punto_anotado = Equipo2.getJugador().get(p).Probabilidad();
+                                    puntos2 += punto_anotado;
+                                    if (punto_anotado > 0) {
+                                        JOptionPane.showMessageDialog(null, "Felicidades anotaste " + punto_anotado);
+
+                                        if (p2 == 0) {
+                                            J0_P2 += punto_anotado;
+                                        } else if (p2 == 1) {
+                                            J1_P2 += punto_anotado;
+                                        } else if (p2 == 2) {
+                                            J2_P2 += punto_anotado;
+                                        } else if (p2 == 3) {
+                                            J3_P2 += punto_anotado;
+                                        } else if (p2 == 4) {
+                                            J4_P2 += punto_anotado;
+                                        }
+                                        turno = 1;
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "Fallaste");
+                                    }
+                                } else if (resp_p == 's' || resp_p == 'S') {
+                                    pases2++;
+                                }
+                            }
+                        }//Fin turno2 
+                    }//Fin del juego
+                    String puntosJ1 = "";
+                    puntosJ1 += puntos1;
+                    String puntosJ2 = "";
+                    puntosJ2 += puntos2;
+                    JOptionPane.showMessageDialog(null, "El equipo 1 unos hizo " + puntosJ1 + "\n"
+                            + "El Equipo 2 hizo " + puntosJ2 + "\n");
+                    if (J0_P1 > J1_P1 && J1_P1 > J2_P1 && J2_P1 > J3_P1 && J3_P1 > J4_P1) {
+                        JOptionPane.showMessageDialog(null, "Maximos anotadores del Equipo 1: \n"
+                                + Equipo1.getJugador().get(0).getNombreJ() + ": " + J0_P1 + "\n"
+                                + Equipo1.getJugador().get(1).getNombreJ() + ": " + J1_P1 + "\n"
+                                + Equipo1.getJugador().get(2).getNombreJ() + ": " + J2_P1 + "\n"
+                                + Equipo1.getJugador().get(3).getNombreJ() + ": " + J3_P1 + "\n"
+                                + Equipo1.getJugador().get(4).getNombreJ() + ": " + J4_P1 + "\n");
                     }
                     break;//Break jugar
             }//Fin del switch PRINCIPAL
         }//Fin del while PRINCIPAL
-    }//Fin del MAIN
-}
+    }//Fin del main
+}//Fin de la clase

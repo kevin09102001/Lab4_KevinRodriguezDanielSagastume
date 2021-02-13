@@ -62,7 +62,7 @@ public class Pateadores extends Jugadores {
 
     @Override
     public int Probabilidad() {
-        int resultado = 0 ;
+        int resultado =0;
         int pro = (int) ((Habilidad_Pateadora + Fuerza + Habilidad_Regateadora) * 0.65 * numero_estrellas / 10);
         int numer = r.nextInt(101);
         if (numer >= 1 && numer <= pro) {

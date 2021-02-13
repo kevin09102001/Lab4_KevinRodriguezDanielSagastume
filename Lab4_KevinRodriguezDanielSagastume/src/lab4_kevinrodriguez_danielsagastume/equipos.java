@@ -13,8 +13,9 @@ import java.util.Date;
  * @author Kevin
  */
 public class equipos {
+  
     protected String Nombre,estadio,pais,Nombre_de_Entrenador, Nombre_de_Dueño, Nombre_de_Mascota,Fecha_de_creacion,Color_principal;
-    ArrayList<Jugadores> jugador=new ArrayList();
+    protected ArrayList<Jugadores> jugador=new ArrayList();
 
     public equipos() {
     }
@@ -101,11 +102,16 @@ public class equipos {
     public void setJugador(ArrayList<Jugadores> jugador) {
         this.jugador = jugador;
     }
-
+   public void imprimir(){
+       String l="";
+           for (Jugadores j : jugador) {
+               l=j+" ";
+           }
+            System.out.println(l);
+       }
     @Override
     public String toString() {
-        return "equipos{" + "Nombre=" + Nombre + ", estadio=" + estadio + ", pais=" + pais + ", Nombre_de_Entrenador=" + Nombre_de_Entrenador + ", Nombre_de_Due\u00f1o=" + Nombre_de_Dueño + ", Nombre_de_Mascota=" + Nombre_de_Mascota + ", Fecha_de_creacion=" + Fecha_de_creacion + ", Color_principal=" + Color_principal + ", jugador=" + jugador + '}';
+        return "equipos{" + "Nombre=" + Nombre + ", estadio=" + estadio + ", pais=" + pais + ", Nombre_de_Entrenador=" + Nombre_de_Entrenador + ", Nombre_de_Dueño=" + Nombre_de_Dueño + ", Nombre_de_Mascota=" + Nombre_de_Mascota + ", Fecha_de_creacion=" + Fecha_de_creacion + ", Color_principal=" + Color_principal + 
+                "\n "+jugador+'}';
     }
-
-    
 }
